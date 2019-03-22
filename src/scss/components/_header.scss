@@ -1,0 +1,213 @@
+.page-head .widget-inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    .logo-img {
+        margin: 10px 10px 0;
+        width: 100%;
+    }
+
+    #menuWrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+
+        .page-frontend-menu  {
+            ul {
+                @include hideElement;
+            }
+
+            &::before {
+                @include pseudoElement(50px, 60px);
+                background: url('../assets/images/mobile/hamburger.svg') no-repeat center center;
+                background-size: 25px 25px;
+                background-color: $background-color;
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+
+        .account-frontend-logged-user {
+            a {
+                @include hideElement;
+            }
+
+            &::before {
+                @include pseudoElement(50px, 60px);
+                background: url('../assets/images/mobile/user.svg') no-repeat center center;
+                background-size: 25px 25px;
+                background-color: $background-color;
+                position: absolute;
+                right: 50px;
+                cursor: pointer;
+            }
+        }
+
+        .product-frontend-search-filter-query {
+            width: 30px;
+            height: 30px;
+
+            input {
+                @include hideElement;
+            }
+            
+            &::before {
+                @include pseudoElement(30px, 30px);
+                background: url('../assets/images/mobile/search.svg') no-repeat center center;
+                background-size: 25px 25px;
+                background-color: $accent-color;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                position: absolute;
+                top: 30px;
+                right: 110px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media(min-width: 540px) {
+    .page-head .widget-inner {
+        .logo-img {
+            margin: 20px 20px 0;
+        }
+    
+        #menuWrapper {
+            .page-frontend-menu::before {
+                width: 80px;
+                height: 90px;
+            }
+    
+            .account-frontend-logged-user::before {
+                width: 80px;
+                height: 90px;
+                right: 80px;
+            }
+    
+            .product-frontend-search-filter-query { 
+                &::before {
+                    width: 40px;
+                    height: 40px;
+                    top: 45px;
+                    right: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1140px) {
+    .page-head .widget-inner {
+        margin: 30px 50px 200px;
+    
+        .logo-img {
+            margin: 0;
+        }
+    
+        #menuWrapper {
+            flex-direction: row;
+            align-items: center;
+    
+            .page-frontend-menu  {
+                display: flex;
+                height: 20px;
+
+                ul {
+                    right: 200px;
+                    list-style: none;
+                    display: flex;
+
+                    .__link {
+                        color: black;
+                        font-size: 18px;
+                        font-family: 'Maven Pro', sans-serif;
+                        font-weight: 500;
+                        padding: 0 15px;
+                    }
+                }
+    
+                &::before {
+                   display: none;
+                }
+            }
+    
+            .account-frontend-logged-user {
+                display: flex;
+                height: 20px;
+
+                a {
+                    right: 120px;
+                    color: black;
+                    font-size: 18px;
+                    font-family: 'Maven Pro', sans-serif;
+                    font-weight: 500;
+                    padding: 0 15px;
+                }
+    
+                &::before {
+                    @include pseudoElement(40px, 40px);
+                    background: url('../assets/images/mobile/user.svg') no-repeat center center;
+                    background-size: 25px 25px;
+                    background-color: $background-color;
+                    position: absolute;
+                    right: -50px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                }
+            }
+    
+            .product-frontend-search-filter-query {   
+                input {
+                    right: 120px;
+                    background-color: $accent-color;
+                    border: none;
+                    border-radius: 30px;
+                    width: 140px;
+                    height: 35px;
+                    padding: 3px 15px;
+                    outline: none;
+    
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+    
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px) {
+    .page-head .widget-inner #menuWrapper {
+        .page-frontend-menu  ul {
+            right: 400px;
+
+            .__link {
+                padding: 0 20px;
+            }
+        }
+    
+        .account-frontend-logged-user {
+            a {
+                right: 160px;
+                padding: 0 20px;
+            }
+
+            &::before {
+                background-size: 30px 30px;
+            }
+        }
+    
+        .product-frontend-search-filter-query input {
+            right: 160px;
+            width: 180px;
+        }
+    }
+}

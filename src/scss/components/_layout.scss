@@ -1,0 +1,24 @@
+body {
+    overflow-x: hidden;
+
+    .page-frontend-listing-item {
+        border: none;
+    }
+}
+
+@media(max-width: 1140px) {
+    .box {
+        width: 100%;
+    }  
+}
+
+@media(min-width: 1140px) {
+    .wrapper::before {
+        @include pseudoElement(40%, 100%);
+        position: fixed;
+        background-color: $background-color;
+        z-index: -100;
+        top: 0;
+        right: 0;
+    }
+}

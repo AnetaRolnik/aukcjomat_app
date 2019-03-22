@@ -1,0 +1,40 @@
+$main-color: #6f3f82;
+$accent-color: #eff7ed;
+$background-color: #e4d9db;
+$text-color: #060606;
+
+
+@mixin dotsSlider($height: 50px, $width: 50px) {
+    display: flex;
+    justify-content: space-around;
+
+    &-item {
+        position: relative;
+    }
+
+    &-item::before {
+        content: '';
+        display: block;
+        height: $height;
+        width: $width;
+        border-radius: 50%;
+        background-color: $accent-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 1;
+    }
+}
+
+@mixin hideElement {
+    position: relative;
+    right: 9999px;
+}
+
+@mixin pseudoElement($width, $height) {
+    content: '';
+    width: $width;
+    height: $height;
+    display: block;
+}

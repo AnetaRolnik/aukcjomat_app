@@ -1,0 +1,139 @@
+.middle_grid {
+    .galeria {
+        margin: 60px 20px;
+
+        .media-frontend-thumbnail {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+            div {
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: center;
+                margin-bottom: 40px;
+    
+                img {
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-family: 'Maven Pro', sans-serif;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    .middle_slider.page-frontend-grid {
+        height: 1013px;
+        width: 100%;
+        background: url('../assets/images/mobile/middleSlider.png') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+
+        .grid {
+            max-width: 100%;
+            margin-bottom: 200px;
+
+            .page-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;   
+
+                p {
+                    color: white;
+                    font-size: 16px;
+                    text-align: center;
+                    width: 70%;
+                }
+
+                .opinion {
+                    font-family: 'Playfair Display', serif;
+                    line-height: 24px;
+                    margin-bottom: 25px;
+                }
+
+                .client {
+                    font-family: 'Maven Pro', sans-serif;
+                    margin-bottom: 0;
+                }
+            }
+                  
+            .bx-pager {
+                @include dotsSlider;
+            }
+        }
+    }
+}
+
+@media(min-width: 540px) {
+    .middle_grid {
+        .galeria {
+            margin: 60px 40px;
+
+            .media-frontend-thumbnail div {
+                margin-bottom: 60px;
+            }
+        }
+
+        .middle_slider.page-frontend-grid .grid .page-content p {
+            width: 50%;
+        }
+    }
+}
+
+@media(min-width: 1140px) {
+    .middle_grid .widget-inner {
+        display: grid;
+        grid-template-columns: 60% 40%;
+
+        .galeria {
+            margin: 140px 0 0;
+
+            .media-frontend-thumbnail {
+                justify-content: flex-start;
+
+                div {
+                    margin-bottom: 80px;
+                }
+            }
+        }
+    
+        .middle_slider.page-frontend-grid {
+            height: 100%;
+            width: 100%;
+            background: url('../assets/images/desktop/middleSlider.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            right: -50px;
+
+            .grid .page-content p {
+                width: 80%;
+            }
+
+            .page-frontend-listing-item .widget-inner {
+                grid-template-columns: 100%;
+            }
+
+            .bx-pager {
+                @include dotsSlider(30px, 30px);
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px) {
+    .middle_grid .widget-inner .middle_slider.page-frontend-grid {
+        right: -170px;
+    }
+}
+
+
+
+
